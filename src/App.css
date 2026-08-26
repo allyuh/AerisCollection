@@ -1,0 +1,25 @@
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.collection {
+  min-height: 100vh;
+  padding: 100px 10%;
+}
+
+.page {
+  position: relative;
+  min-height: 300vh;
+
+  background-image: url("/images/bg/aerisbg.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}

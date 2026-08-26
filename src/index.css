@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main section {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@font-face {
+  font-family: "Valorant";
+  src: url("/fonts/Valorant.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  min-width: 320px;
+
+  font-family: "Valorant", sans-serif;
+}
