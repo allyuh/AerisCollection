@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import "./App.css";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -7,9 +8,7 @@ function App() {
       <Navbar />
 
       <main>
-        <section id="home">
-          <h1>Aeris Collection</h1>
-        </section>
+        <Home />
 
         <section id="collection">
           <h2>Collection</h2>
