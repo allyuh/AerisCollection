@@ -1,8 +1,8 @@
 .page {
   position: relative;
-  min-height: 300vh;
   background-color: #b3a090;
 }
+
 
 /* =========================
    HOME
@@ -10,27 +10,70 @@
 
 .home-wrapper {
   position: relative;
-  height: 150vh;
+  height: 100vh;
+  z-index: 2;
 }
 
 .home-wrapper .home {
-  position: sticky;
-  top: 0;
-
+  position: relative;
   height: 100vh;
-
-  z-index: 2;
 }
+
+
+/* =========================
+   COLLECTION WRAPPER
+   ========================= */
+
+.collection-wrapper {
+  position: relative;
+  height: 100vh;
+}
+
 
 /* =========================
    COLLECTION
    ========================= */
 
 .collection {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #b3a090;
+}
+
+
+/* Collection during transition */
+
+.collection-fixed {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1;
+}
+
+
+/* Collection after transition */
+
+.collection-normal {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================
+   VIDEOS / BUY NOW
+   ========================= */
+
+.videos,
+.buy {
   position: relative;
 
   min-height: 100vh;
-  padding: 100px 10%;
 
-  z-index: 1;
+  z-index: 2;
 }
