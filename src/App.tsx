@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import "./App.css";
 import Home from "./components/Home";
+import Collection from "./components/Collection";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -38,15 +39,17 @@ function App() {
 
         {/* COLLECTION */}
         <div className="collection-wrapper">
-          <section
-            id="collection"
+          <div
             className={`collection ${
-              collectionFixed ? "collection-fixed" : "collection-normal"
+              collectionFixed
+                ? "collection-fixed"
+                : "collection-normal"
             }`}
           >
-            <h2>Collection</h2>
-          </section>
+            <Collection />
+          </div>
         </div>
+
 
         {/* NORMAL SCROLLING SECTIONS */}
         <section id="videos" className="videos">
