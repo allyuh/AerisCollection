@@ -5,7 +5,7 @@ function Home() {
   const { scrollY } = useScroll();
 
   // Background moves slowly
-  const backgroundY = useTransform(scrollY, [0, 1000], [0, 150]);
+  const backgroundY = useTransform(scrollY, [0, 1000], [0, 250]);
 
   // Cutout moves faster
   const cutoutY = useTransform(scrollY, [0, 1000], [0, -600]);

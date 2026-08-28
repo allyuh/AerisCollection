@@ -1,25 +1,36 @@
-.hero {
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-}
-
-.collection {
-  min-height: 100vh;
-  padding: 100px 10%;
-}
-
 .page {
   position: relative;
   min-height: 300vh;
+  background-color: #b3a090;
+}
 
-  background-image: url("/images/bg/aeriscard.jpg");
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+/* =========================
+   HOME
+   ========================= */
+
+.home-wrapper {
+  position: relative;
+  height: 150vh;
+}
+
+.home-wrapper .home {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+
+  z-index: 2;
+}
+
+/* =========================
+   COLLECTION
+   ========================= */
+
+.collection {
+  position: relative;
+
+  min-height: 100vh;
+  padding: 100px 10%;
+
+  z-index: 1;
 }

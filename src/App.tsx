@@ -8,17 +8,19 @@ function App() {
       <Navbar />
 
       <main>
-        <Home />
+        <div className="home-wrapper">
+          <Home />
+        </div>
 
-        <section id="collection">
+        <section id="collection" className="collection">
           <h2>Collection</h2>
         </section>
 
-        <section id="videos">
+        <section id="videos" className="videos">
           <h2>Videos</h2>
         </section>
 
-        <section id="buy">
+        <section id="buy" className="buy">
           <h2>Buy Now</h2>
         </section>
       </main>
