@@ -6,8 +6,9 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  padding: 80px 8%;
+  background: #0c141c;
 
   overflow: hidden;
 }
@@ -23,10 +24,28 @@
 .collection-left h2 {
   margin: 0 0 10px;
 
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2em;
+
   color: white;
 
-  font-size: clamp(40px, 5vw, 80px);
   font-weight: normal;
+}
+
+.aeris-word {
+  font-size: clamp(40px, 5vw, 80px);
+  line-height: 1;
+}
+
+.weapon-name {
+  font-size: clamp(40px, 5vw, 80px);
+  line-height: 1;
+}
+
+.weapon-name-small {
+  font-size: clamp(26px, 4vw, 80px);
 }
 
 .vp-price {
@@ -67,7 +86,7 @@
 
   border: none;
 
-  background: rgba(255, 255, 255, 0.08);
+  background: transparent;
 
   cursor: pointer;
 
@@ -83,15 +102,30 @@
   height: 100%;
 
   object-fit: contain;
+
+  transform: rotate(0deg) scale(1);
+  transform-origin: center;
+
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
 }
+
 
 .weapon-button:hover {
   transform: translateY(-5px);
 }
 
-.weapon-button.active {
-  background: rgba(255, 255, 255, 0.25);
+.weapon-button:hover img {
+  transform: rotate(12deg) scale(1.08);
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.25));
 }
+
+.weapon-button.active {
+  background: rgba(50, 71, 106, 0.334);
+}
+
+
 
 .square-buttons {
   display: flex;
@@ -124,12 +158,14 @@
 
 .collection-content {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 
-  padding: 80px 8%;
+  padding: 80px 0 80px 8%;
 
   overflow: hidden;
 }
@@ -137,25 +173,32 @@
 .collection-right {
   position: relative;
 
-  width: 60%;
+  width: 58%;
   height: 700px;
+
+  margin-left: auto;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+
+  overflow: hidden;
 }
 
 .carousel-half-circle {
   position: absolute;
 
-  width: 650px;
-  height: 650px;
+  width: 800px;
+  height: 800px;
+
+  right: -250px;
+  top: 50%;
+
+  transform: translateY(-50%);
 
   border-radius: 50%;
 
-  background: rgba(100, 150, 200, 0.25);
-
-  right: -100px;
+  background: rgba(35, 48, 71, 0.334);
 
   z-index: 1;
 }
@@ -163,7 +206,6 @@
 .selected-gun {
   position: relative;
 
-  width: min(650px, 90%);
   height: auto;
 
   object-fit: contain;
@@ -171,4 +213,21 @@
   z-index: 2;
 
   pointer-events: none;
+
+  right: -20px;
+}
+
+.selected-gun.gun-small {
+  width: min(450px, 100%);
+  right: 50px;
+}
+
+.selected-gun.gun-medium {
+  width: min(540px, 82%);
+  right: -5px;
+}
+
+.selected-gun.gun-large {
+  width: min(900px, 100%);
+  right: -100px;
 }
