@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import "../assets/styles/collection.css";
 
-
 type Weapon = {
   name: string;
   image: string;
@@ -15,6 +14,12 @@ const weapons: Weapon[] = [
   { name: "Marshal", image: "/images/collections/Aeris_Marshal.png" },
   { name: "Vandal", image: "/images/collections/Aeris_Vandal.png" },
 ];
+
+const getWeaponButtonClass = (name: string) => {
+  return ["Guardian", "Marshal", "Vandal"].includes(name)
+    ? "weapon-button weapon-button-large"
+    : "weapon-button";
+};
 
 const getWeaponSizeClass = (name: string) => {
   if (["Guardian", "Marshal", "Vandal"].includes(name)) return "gun-large";
@@ -29,6 +34,26 @@ function Collection() {
 
   return (
     <div className="collection-content">
+      <div className="collection-card-scene" aria-label="Aeris card">
+        <div className="collection-card">
+          <div className="card-face card-front">
+            <div className="card-diamond">
+              <span className="card-spark spark-1" />
+              <span className="card-spark spark-2" />
+              <span className="card-spark spark-3" />
+            </div>
+          </div>
+
+          <div className="card-face card-back">
+            <div className="card-diamond">
+              <span className="card-spark spark-1" />
+              <span className="card-spark spark-2" />
+              <span className="card-spark spark-3" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="collection-left">
         <h2>
           <span className="aeris-word">Aeris</span>{" "}
@@ -52,7 +77,7 @@ function Collection() {
           {weapons.map((weapon, index) => (
             <button
               key={weapon.name}
-              className={`weapon-button ${
+              className={`${getWeaponButtonClass(weapon.name)} ${
                 selectedWeapon === index ? "active" : ""
               }`}
               onClick={() => setSelectedWeapon(index)}
