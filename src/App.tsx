@@ -1,7 +1,8 @@
-import Navbar from "./components/Navbar";
 import "./App.css";
+import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Collection from "./components/Collection";
+import Video from "./components/Video";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -51,10 +52,7 @@ function App() {
         </div>
 
 
-        {/* NORMAL SCROLLING SECTIONS */}
-        <section id="videos" className="videos">
-          <h2>Videos</h2>
-        </section>
+        <Video />
 
         <section id="buy" className="buy">
           <h2>Buy Now</h2>

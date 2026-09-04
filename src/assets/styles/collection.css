@@ -291,16 +291,16 @@
   align-items: center;
   justify-content: flex-end;
 
-  overflow: hidden;
+  overflow: visible;
 }
 
 .carousel-half-circle {
   position: absolute;
 
-  width: 800px;
-  height: 800px;
+  width: 750px;
+  height: 750px;
 
-  right: -150px;
+  right: -130px;
   top: 50%;
 
   transform: translateY(-50%);
@@ -339,20 +339,42 @@
 }
 
 .weapon-carousel {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  right: -50px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  overflow: hidden;
+  z-index: 2;
 }
 
 .weapon-carousel .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+
   align-items: center;
 }
 
 .weapon-carousel .swiper-slide {
+  width: 100%;
+  height: 100%;
+
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  overflow: visible;
+  justify-content: center;
+
+  overflow: hidden;
+}
+.weapon-carousel .selected-gun {
+  position: relative;
+
+  right: auto;
+  object-fit: contain;
 }
 
 /* card */

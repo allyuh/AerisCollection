@@ -142,7 +142,7 @@ function Collection() {
           modules={[EffectCreative]}
           effect="creative"
           initialSlide={selectedWeapon}
-          speed={850}
+          speed={650}
           allowTouchMove={false}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
@@ -150,23 +150,23 @@ function Collection() {
           onSlideChange={(swiper) => {
             setSelectedWeapon(swiper.realIndex);
           }}
-            creativeEffect={{
-              limitProgress: 3,
+          creativeEffect={{
+            limitProgress: 3,
 
-              prev: {
-                translate: ["120%", "-85%", 0],
-                rotate: [0, 0, 35],
-                scale: 0.82,
-                opacity: 0,
-              },
+            prev: {
+              translate: ["60%", "-55%", 0],
+              rotate: [0, 0, 35],
+              scale: 0.8,
+              opacity: 0,
+            },
 
-              next: {
-                translate: ["-120%", "85%", 0],
-                rotate: [0, 0, -35],
-                scale: 0.82,
-                opacity: 0,
-              },
-            }}
+            next: {
+              translate: ["-60%", "55%", 0],
+              rotate: [0, 0, -35],
+              scale: 0.8,
+              opacity: 0,
+            },
+          }}
         >
           {weapons.map((weapon) => (
             <SwiperSlide key={weapon.name}>
