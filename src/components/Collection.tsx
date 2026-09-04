@@ -29,30 +29,13 @@ const getWeaponSizeClass = (name: string) => {
 
 function Collection() {
   const [selectedWeapon, setSelectedWeapon] = useState(0);
+  const [selectedVariant, setSelectedVariant] = useState("blue");
 
   const activeWeapon = weapons[selectedWeapon];
 
   return (
     <div className="collection-content">
-      <div className="collection-card-scene" aria-label="Aeris card">
-        <div className="collection-card">
-          <div className="card-face card-front">
-            <div className="card-diamond">
-              <span className="card-spark spark-1" />
-              <span className="card-spark spark-2" />
-              <span className="card-spark spark-3" />
-            </div>
-          </div>
 
-          <div className="card-face card-back">
-            <div className="card-diamond">
-              <span className="card-spark spark-1" />
-              <span className="card-spark spark-2" />
-              <span className="card-spark spark-3" />
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div className="collection-left">
         <h2>
@@ -69,7 +52,7 @@ function Collection() {
         </h2>
 
         <div className="vp-price">
-          <img src="/images/bg/vp.png" alt="Valorant Points" />
+          <img src="/images/bg/vp1.png" alt="Valorant Points" />
           <span>2,375</span>
         </div>
 
@@ -89,10 +72,20 @@ function Collection() {
         </div>
 
         <div className="square-buttons">
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
+          {["blue", "red", "pink", "purp"].map((variant) => (
+            <button
+              key={variant}
+              type="button"
+              className={`variant-button ${variant} ${
+                selectedVariant === variant ? "selected" : ""
+              }`}
+              onClick={() => {
+                console.log("Selected variant:", variant);
+                setSelectedVariant(variant);
+              }}
+              aria-label={`${variant} variant`}
+            />
+          ))}
         </div>
       </div>
 
