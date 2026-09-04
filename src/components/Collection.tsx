@@ -1,5 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCreative } from "swiper/modules";
+import type { Swiper as SwiperInstance } from "swiper";
+
+import "swiper/css";
+import "swiper/css/effect-creative";
 import "../assets/styles/collection.css";
 
 type Weapon = {
@@ -27,9 +33,13 @@ const getWeaponSizeClass = (name: string) => {
   return "gun-medium";
 };
 
+
 function Collection() {
   const [selectedWeapon, setSelectedWeapon] = useState(0);
   const [selectedVariant, setSelectedVariant] = useState("blue");
+  const [cardFlipKey, setCardFlipKey] = useState(0);
+  const swiperRef = useRef<SwiperInstance | null>(null);
+
 
   const activeWeapon = weapons[selectedWeapon];
 
@@ -73,7 +83,10 @@ function Collection() {
               className={`${getWeaponButtonClass(weapon.name)} ${
                 selectedWeapon === index ? "active" : ""
               }`}
-              onClick={() => setSelectedWeapon(index)}
+              onClick={() => {
+                swiperRef.current?.slideTo(index);
+                setCardFlipKey((currentKey) => currentKey + 1);
+              }}
               aria-label={weapon.name}
             >
               <img src={weapon.image} alt={weapon.name} />
@@ -101,31 +114,70 @@ function Collection() {
 
       <div className="collection-right">
         <div className="carousel-half-circle"></div>
+        <div className="collection-card-scene" aria-label="Aeris card">
+          <motion.div
+            key={cardFlipKey}
+            className="collection-card-flip"
+            initial={{ rotateY: 0 }}
+            animate={{ rotateY: 180 }}
+            transition={{
+              duration: 1.5,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <div className="collection-card">
+              <div className="card-face card-front">
+                <div className="card-diamond" />
+              </div>
 
-        <motion.img
-          key={selectedWeapon}
-          className={`selected-gun ${getWeaponSizeClass(activeWeapon.name)}`}
-          src={activeWeapon.image}
-          alt={activeWeapon.name}
-          initial={{
-            opacity: 0,
-            x: -120,
-            y: 90,
-            rotate: 16,
-            scale: 0.88,
+              <div className="card-face card-back">
+                <div className="card-diamond" />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        <Swiper
+          className="weapon-carousel"
+          modules={[EffectCreative]}
+          effect="creative"
+          initialSlide={selectedWeapon}
+          speed={850}
+          allowTouchMove={false}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
           }}
-          animate={{
-            opacity: 1,
-            x: 30,
-            y: 0,
-            rotate: 10,
-            scale: 1,
+          onSlideChange={(swiper) => {
+            setSelectedWeapon(swiper.realIndex);
           }}
-          transition={{
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-        />
+            creativeEffect={{
+              limitProgress: 3,
+
+              prev: {
+                translate: ["120%", "-85%", 0],
+                rotate: [0, 0, 35],
+                scale: 0.82,
+                opacity: 0,
+              },
+
+              next: {
+                translate: ["-120%", "85%", 0],
+                rotate: [0, 0, -35],
+                scale: 0.82,
+                opacity: 0,
+              },
+            }}
+        >
+          {weapons.map((weapon) => (
+            <SwiperSlide key={weapon.name}>
+              <img
+                className={`selected-gun ${getWeaponSizeClass(weapon.name)}`}
+                src={weapon.image}
+                alt={weapon.name}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
