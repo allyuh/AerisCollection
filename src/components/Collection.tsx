@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import "../assets/styles/collection.css";
 
 type Weapon = {
@@ -38,18 +38,28 @@ function Collection() {
 
 
       <div className="collection-left">
-        <h2>
-          <span className="aeris-word">Aeris</span>{" "}
-          <span
+      <h2>
+        <span className="aeris-word">Aeris</span>{" "}
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={activeWeapon.name}
             className={
               ["Guardian", "Marshal"].includes(activeWeapon.name)
                 ? "weapon-name weapon-name-small"
                 : "weapon-name"
             }
+            initial={{ opacity: 0, y: 35 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -35 }}
+            transition={{
+              duration: 0.2,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
             {activeWeapon.name}
-          </span>
-        </h2>
+          </motion.span>
+        </AnimatePresence>
+      </h2>
 
         <div className="vp-price">
           <img src="/images/bg/vp1.png" alt="Valorant Points" />
