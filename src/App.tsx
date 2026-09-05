@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Collection from "./components/Collection";
 import Video from "./components/Video";
+import BuyNow from "./components/BuyNow";
+import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -54,9 +56,8 @@ function App() {
 
         <Video />
 
-        <section id="buy" className="buy">
-          <h2>Buy Now</h2>
-        </section>
+       <BuyNow />
+       <Footer />
       </main>
     </div>
   );

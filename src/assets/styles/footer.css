@@ -1,0 +1,53 @@
+.site-footer {
+  min-height: 280px;
+  padding: 64px 8% 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  color: #ece8e1;
+  background: #0c141c;
+  border-top: 1px solid rgba(255, 70, 85, 0.45);
+
+  font-family: "Valorant", sans-serif;
+  text-align: center;
+}
+
+
+.footer-links,
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.site-footer a {
+  color: #ece8e1;
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.site-footer a:hover {
+  color: #ff4655;
+}
+
+.footer-copy {
+  margin: 0;
+
+  color: rgba(236, 232, 225, 0.55);
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.footer-brand img {
+  width: 140px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}

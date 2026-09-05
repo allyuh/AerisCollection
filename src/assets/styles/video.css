@@ -30,64 +30,6 @@
   box-sizing: border-box;
 }
 
-/* background */
-.video-section::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.45;
-
-  background:
-    linear-gradient(#ff4655, #ff4655) 6% 12% / 28px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 19% 26% / 42px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 34% 9% / 22px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 46% 32% / 36px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 63% 15% / 46px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 78% 29% / 26px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 91% 11% / 35px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 4% 45% / 40px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 17% 61% / 24px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 31% 48% / 48px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 51% 66% / 32px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 68% 51% / 42px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 86% 64% / 27px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 9% 82% / 37px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 26% 93% / 24px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 43% 79% / 44px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 59% 91% / 28px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 76% 80% / 47px 1px no-repeat,
-    linear-gradient(#ff4655, #ff4655) 94% 92% / 31px 1px no-repeat;
-}
-
-.video-section::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.8;
-
-  background-image: radial-gradient(
-    circle,
-    #ff4655 1px,
-    transparent 1.5px
-  );
-
-  background-size: 70px 70px;
-
-  mask-image: radial-gradient(
-    circle at center,
-    transparent 0 20%,
-    black 48%
-  );
-}
-/* background */
 
 .video-menu {
   width: 100%;
