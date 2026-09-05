@@ -4,22 +4,26 @@ import "../assets/styles/video.css";
 type VideoItem = {
   name: string;
   embedUrl: string;
+  aspectRatio: string;
 };
 
 const videos: VideoItem[] = [
   {
-    name: "Trailer 1",
+    name: "Trailer",
     embedUrl: "https://www.youtube.com/embed/PoogGcJjsFU",
+    aspectRatio: "16 / 9",
   },
   {
-    name: "Trailer 2",
+    name: "Showcase 1",
     embedUrl:
-      "https://platform.twitter.com/embed/Tweet.html?id=2089979414549278973",
+      "https://www.youtube.com/embed/eMfT7XUNKOQ?",
+    aspectRatio: "16 / 9",
   },
   {
-    name: "Gameplay",
+    name: "Showcase 2",
     embedUrl:
-      "https://platform.twitter.com/embed/Tweet.html?id=2089980524404064308",
+      "https://www.youtube.com/embed/O9hgENQ_E9E?si=wHsKSnhjYeZESeBM",
+    aspectRatio: "16 / 9",
   },
 ];
 
@@ -43,7 +47,10 @@ function Video() {
           ))}
         </div>
 
-        <div className="video-player">
+        <div
+          className="video-player"
+          style={{ aspectRatio: activeVideo.aspectRatio }}
+        >
           <iframe
             key={activeVideo.embedUrl}
             src={activeVideo.embedUrl}
