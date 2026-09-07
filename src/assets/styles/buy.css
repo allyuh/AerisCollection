@@ -22,6 +22,15 @@
   font-family: "Valorant", sans-serif;
 }
 
+.buy-title {
+  margin: 0 0 24px;
+
+  color: #ece8e1;
+  font-family: "Valorant", sans-serif;
+  font-size: clamp(40px, 4vw, 58px);
+  font-weight: normal;
+  text-align: center;
+}
 
 .buy-carousel {
   width: 100%;

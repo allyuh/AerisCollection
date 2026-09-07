@@ -20,6 +20,7 @@ function BuyNow() {
 
   return (
     <section id="buy" className="buy-section">
+      <h2 className="buy-title">Buy Now!</h2>
       <div className="buy-carousel">
 
         <Swiper

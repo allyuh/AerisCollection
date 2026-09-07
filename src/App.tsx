@@ -10,54 +10,53 @@ import { useEffect, useState } from "react";
 function App() {
   const [collectionFixed, setCollectionFixed] = useState(true);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const transitionPoint = window.innerHeight;
+    useEffect(() => {
+      const handleScroll = () => {
+        const home = document.getElementById("home");
 
-      if (window.scrollY >= transitionPoint) {
-        setCollectionFixed(false);
-      } else {
-        setCollectionFixed(true);
-      }
-    };
+        if (!home) {
+          return;
+        }
 
-    window.addEventListener("scroll", handleScroll);
+        const homeBottom = home.offsetTop + home.offsetHeight;
+        setCollectionFixed(window.scrollY < homeBottom);
+      };
 
-    handleScroll();
+      handleScroll();
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("resize", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("resize", handleScroll);
+      };
+    }, []);
 
   return (
     <div className="page">
       <Navbar />
 
       <main>
-        {/* HOME */}
-        <div className="home-wrapper">
-          <Home />
-        </div>
+        <div className="transition-stage">
+          <div className="home-wrapper">
+            <Home />
+          </div>
 
-        {/* COLLECTION */}
-        <div className="collection-wrapper">
           <div
-            className={`collection ${
-              collectionFixed
-                ? "collection-fixed"
-                : "collection-normal"
+            id="collection"
+            className={`collection-wrapper ${
+              collectionFixed ? "collection-is-fixed" : "collection-is-normal"
             }`}
           >
-            <Collection />
+            <div className="collection">
+              <Collection />
+            </div>
           </div>
         </div>
 
-
         <Video />
-
-       <BuyNow />
-       <Footer />
+        <BuyNow />
+        <Footer />
       </main>
     </div>
   );

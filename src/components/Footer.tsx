@@ -14,10 +14,10 @@ function Footer() {
     </div>
 
       <nav className="footer-links" aria-label="Footer navigation">
-        <a href="#home">Home</a>
+        <a href="#home">HOME</a>
         <a href="#collection">Collection</a>
-        <a href="#videos">Videos</a>
-        <a href="#buy">Buy Now</a>
+        <a href="#videos">videos</a>
+        <a href="#buy">BUY NOW</a>
       </nav>
 
       <div className="footer-socials" aria-label="Social media links">
