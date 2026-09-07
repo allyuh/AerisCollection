@@ -5,42 +5,56 @@
 
 .transition-stage {
   position: relative;
-  min-height: 200vh;
+  min-height: 235vh;
 }
 
+/* HOME */
 .home-wrapper {
   position: relative;
-  height: 100vh;
+  width: 100%;
+  height: 120vh;
   z-index: 2;
 }
 
+/* COLLECTION WRAPPER */
 .collection-wrapper {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 135vh;
 }
 
+/* COLLECTION WHILE HOME IS ON SCREEN */
 .collection-is-fixed {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
 
   z-index: 1;
 }
 
+/* COLLECTION AFTER HOME */
 .collection-is-normal {
-  position: relative;
-  top: auto;
-  left: auto;
+  position: absolute;
 
-  z-index: 2;
+  top: 100vh;
+  left: 0;
+
+  width: 100%;
+  height: 135vh;
+
+  z-index: 1;
 }
 
+/* COLLECTION CONTENT */
 .collection {
   width: 100%;
-  height: 100vh;
+  height: 135vh;
   min-height: 100vh;
 }
 
-#videos {
+#video {
   scroll-margin-top: -200px;
 }

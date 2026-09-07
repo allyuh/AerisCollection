@@ -8,6 +8,7 @@ function Home() {
   const cutoutY = useTransform(scrollY, [0, 1000], [0, -600]);
   const textY = useTransform(scrollY, [0, 1000], [0, -100]);
   const cardY = useTransform(scrollY, [0, 1000], [0, -350]);
+  
 
   return (
       <motion.section

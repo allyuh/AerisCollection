@@ -5,32 +5,30 @@ import Collection from "./components/Collection";
 import Video from "./components/Video";
 import BuyNow from "./components/BuyNow";
 import Footer from "./components/Footer";
+
 import { useEffect, useState } from "react";
 
 function App() {
   const [collectionFixed, setCollectionFixed] = useState(true);
 
-    useEffect(() => {
-      const handleScroll = () => {
-        const home = document.getElementById("home");
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
 
-        if (!home) {
-          return;
-        }
+      setCollectionFixed(scrollY < viewportHeight);
+    };
 
-        const homeBottom = home.offsetTop + home.offsetHeight;
-        setCollectionFixed(window.scrollY < homeBottom);
-      };
+    handleScroll();
 
-      handleScroll();
-      window.addEventListener("scroll", handleScroll);
-      window.addEventListener("resize", handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
 
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-        window.removeEventListener("resize", handleScroll);
-      };
-    }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="page">
@@ -38,20 +36,26 @@ function App() {
 
       <main>
         <div className="transition-stage">
+
+          {/* HOME */}
           <div className="home-wrapper">
             <Home />
           </div>
 
+          {/* COLLECTION */}
           <div
             id="collection"
             className={`collection-wrapper ${
-              collectionFixed ? "collection-is-fixed" : "collection-is-normal"
+              collectionFixed
+                ? "collection-is-fixed"
+                : "collection-is-normal"
             }`}
           >
             <div className="collection">
               <Collection />
             </div>
           </div>
+
         </div>
 
         <Video />
