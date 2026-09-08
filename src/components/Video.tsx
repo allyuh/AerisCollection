@@ -1,5 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperInstance } from "swiper";
+
 import "../assets/styles/video.css";
+import "swiper/css";
 
 type VideoItem = {
   name: string;
@@ -29,38 +34,72 @@ const videos: VideoItem[] = [
 
 function Video() {
   const [selectedVideo, setSelectedVideo] = useState(0);
-  const activeVideo = videos[selectedVideo];
+  const sectionRef = useRef<HTMLElement>(null);
+  const swiperRef = useRef<SwiperInstance | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "center center"],
+  });
+  const menuX = useTransform(scrollYProgress, [0, 1], [-160, 0]);
+  const playerX = useTransform(scrollYProgress, [0, 1], [160, 0]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
 
   return (
-    <section id="videos" className="video-section">
+    <motion.section
+      ref={sectionRef}
+      id="videos"
+      className="video-section"
+      style={{ opacity: contentOpacity }}
+    >
       <div className="video-content">
-        <div className="video-menu">
+        <motion.div className="video-menu" style={{ x: menuX }}>
           {videos.map((video, index) => (
             <button
               key={video.name}
               type="button"
               className={selectedVideo === index ? "active" : ""}
-              onClick={() => setSelectedVideo(index)}
+              onClick={() => {
+                setSelectedVideo(index);
+                swiperRef.current?.slideTo(index);
+              }}
             >
               {video.name}
             </button>
           ))}
-        </div>
+        </motion.div>
 
-        <div
+        <motion.div
           className="video-player"
-          style={{ aspectRatio: activeVideo.aspectRatio }}
+          style={{ x: playerX }}
         >
-          <iframe
-            key={activeVideo.embedUrl}
-            src={activeVideo.embedUrl}
-            title={activeVideo.name}
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
+          <Swiper
+            className="video-swiper"
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            onSlideChange={(swiper) => setSelectedVideo(swiper.activeIndex)}
+            speed={750}
+          >
+            {videos.map((video) => (
+              <SwiperSlide key={video.name}>
+                <div
+                  className="video-frame"
+                  style={{ aspectRatio: video.aspectRatio }}
+                >
+                  <iframe
+                    src={video.embedUrl}
+                    title={video.name}
+                    loading="lazy"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
