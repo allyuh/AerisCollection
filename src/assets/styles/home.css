@@ -45,21 +45,59 @@
 
 .home-title {
   position: relative;
-
   z-index: 3;
-
   margin: 0;
   top: -130px;
-
-  color: white;
 
   font-family: "Valorant", sans-serif;
   font-size: clamp(100px, 18vw, 400px);
   font-weight: normal;
   letter-spacing: 0.05em;
-
   pointer-events: none;
+
+  /* Blue → silver → blue metallic effect */
+  background: linear-gradient(
+    110deg,
+    #6fa6e9 0%,
+    #b8d7f2 20%,
+    #ffffff 32%,
+    #7aa9d8 45%,
+    #dceeff 58%,
+    #6c9bcf 75%,
+    #bcd8f1 90%,
+    #5f8fc9 100%
+  );
+
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Metallic glow */
+  filter:
+    drop-shadow(0 0 8px rgba(120, 190, 255, 0.35))
+    drop-shadow(0 0 20px rgba(80, 150, 220, 0.2));
+
+  /* Continuous sparkle movement */
+  animation: aerisSparkle 7.3s linear infinite;
 }
+
+@keyframes aerisSparkle {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
 
 .home-cutout {
   position: absolute;
@@ -79,3 +117,58 @@
 
   z-index: 4;
 }
+
+/* sparkles */
+.home-sparkles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  display: block;
+
+  background: #dceeff;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 5px rgba(220, 238, 255, 0.9),
+    0 0 12px rgba(100, 180, 255, 0.75),
+    0 0 22px rgba(100, 180, 255, 0.45);
+
+  transform: scale(0);
+  animation-name: sparkleTwinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes sparkleTwinkle {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  30% {
+    opacity: 0.4;
+    transform: scale(0.6);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+
+  70% {
+    opacity: 0.4;
+    transform: scale(0.6);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+/* sparkles */
