@@ -82,13 +82,12 @@
 
 .collection-left {
   position: relative;
-
-  width: 40%;
+  width: 38vw;
   background-color: #ece8e1;
-  padding: 32px;
+  padding: 2.5vw;
   border-radius: 10px;
-
   z-index: 5;
+  box-sizing: border-box;
 }
 
 .collection-left h2 {
@@ -270,52 +269,52 @@
 
 .collection-content {
   position: relative;
-
   width: 100%;
   min-height: 100vh;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
 
-  padding: 80px 0 80px 8%;
+  gap: 1.84vw;
+
+  padding: 6.25vw 0 6.25vw 8vw;
 
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .collection-right {
   position: relative;
-
   width: 58%;
-  height: 700px;
-
+  height: 54.6875vw;
+  max-height: none;
   margin-left: auto;
-
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
   overflow: visible;
 }
 
 .carousel-half-circle {
   position: absolute;
 
-  width: 750px;
-  height: 750px;
+  width: 58.59375vw;
+  height: 58.59375vw;
 
-  right: -112px;
+  right: -8.75vw;
   top: 50%;
 
   transform: translateY(-50%);
 
-  border: 20px solid #ece8e1;
+  border: 1.5625vw solid #ece8e1;
   border-radius: 50%;
 
   background: transparent;
-
   z-index: 1;
+
+  box-sizing: border-box;
+  pointer-events: none;
 }
 
 .selected-gun {
@@ -346,11 +345,10 @@
 .weapon-carousel {
   position: absolute;
 
-  width: 700px;
-  height: 700px;
-
-  right: -50px;
-  top: 50%;
+  width: 54.6875vw;
+  height: 54.6875vw;
+  right: -3.90625vw;
+  top: 28vw;
 
   transform: translateY(-50%);
 
@@ -382,18 +380,21 @@
   object-fit: contain;
 }
 
+
 /* card */
+
 .collection-card-scene {
   position: absolute;
+
   top: 50%;
-  right: 135px;
+  right: 10.546875vw;
 
-  width: 290px;
-  height: 180px;
+  width: 22.65625vw;
+  height: 14.0625vw;
 
-  perspective: 1200px;
+  perspective: 93.75vw;
+
   transform: translateY(-50%);
-
   z-index: 1;
 }
 
@@ -406,9 +407,9 @@
   transform-origin: center;
 
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
   cursor: pointer;
 }
-
 
 .card-face {
   position: absolute;
@@ -424,6 +425,7 @@
   -webkit-backface-visibility: hidden;
 
   background: rgba(10, 21, 49, 0.8);
+
   box-shadow: 0 0 22px rgba(255, 255, 255, 0.2);
 }
 
@@ -436,6 +438,7 @@
   height: 65%;
 
   border: 2px solid #ffffff;
+
   transform: rotate(45deg);
 
   box-shadow:
@@ -449,4 +452,5 @@
 
   transform-style: preserve-3d;
 }
+
 /* card */

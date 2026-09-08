@@ -42,7 +42,6 @@
 
   z-index: 2;
 }
-
 .home-title {
   position: relative;
   z-index: 3;
@@ -50,12 +49,13 @@
   top: -130px;
 
   font-family: "Valorant", sans-serif;
-  font-size: clamp(100px, 18vw, 400px);
+
+  font-size: 18vw;
+
   font-weight: normal;
   letter-spacing: 0.05em;
   pointer-events: none;
 
-  /* Blue → silver → blue metallic effect */
   background: linear-gradient(
     110deg,
     #6fa6e9 0%,
@@ -75,12 +75,10 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* Metallic glow */
   filter:
     drop-shadow(0 0 8px rgba(120, 190, 255, 0.35))
     drop-shadow(0 0 20px rgba(80, 150, 220, 0.2));
 
-  /* Continuous sparkle movement */
   animation: aerisSparkle 7.3s linear infinite;
 }
 
@@ -102,19 +100,17 @@
 .home-cutout {
   position: absolute;
 
-  width: 1715px;
-  height: 4096px;
+  width: 134vw;
+  height: calc(134vw * 2.3895);
 
   left: 50%;
   top: -25%;
-
-  margin-left: -857.5px;
+  margin-left: -67vw;
 
   object-fit: contain;
   object-position: center top;
 
   pointer-events: none;
-
   z-index: 4;
 }
 

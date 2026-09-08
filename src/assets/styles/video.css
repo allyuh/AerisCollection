@@ -1,32 +1,51 @@
 .video-section {
   position: relative;
   isolation: isolate;
-
   width: 100%;
   min-height: 100vh;
-  padding: 20px 8% 80px;
+
+  padding: 1.5625vw 8vw 6.25vw;
 
   display: flex;
   align-items: center;
+
   overflow: hidden;
   box-sizing: border-box;
-  background: radial-gradient(circle at center, rgba(255, 70, 86, 0.109), transparent 28%),
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 70, 86, 0.109),
+      transparent 28%
+    ),
     #0c141c;
-  
 }
 
 .video-content {
   width: 100%;
-  max-width: 1200px;
+  max-width: 93.75vw;
+
   margin: 0 auto;
-  padding-top: clamp(40px, 8vw, 100px);
+
+  padding-top: 7.8125vw;
   padding-left: 0;
 
   display: grid;
-  grid-template-columns: minmax(140px, 180px) minmax(0, 760px);
+
+  /*
+    Original:
+    180px menu
+    760px player
+  */
+  grid-template-columns:
+    minmax(10.9375vw, 14.0625vw)
+    minmax(0, 59.375vw);
+
   justify-content: center;
   align-items: center;
-  gap: clamp(24px, 5vw, 80px);
+
+  gap: 6.25vw;
+
   box-sizing: border-box;
 }
 
@@ -37,7 +56,8 @@
 
   display: flex;
   flex-direction: column;
-  gap: 18px;
+
+  gap: 1.40625vw;
 }
 
 .video-menu,
@@ -48,12 +68,14 @@
 .video-menu button {
   width: 100%;
   min-width: 0;
+
   box-sizing: border-box;
   white-space: normal;
-  padding: 14px 18px;
+
+  padding: 1.09375vw 1.40625vw;
 
   font-family: "Valorant", sans-serif;
-  font-size: 16px;
+  font-size: 1.25vw;
   letter-spacing: 0;
 
   border: 1px solid rgba(255, 255, 255, 0.55);
@@ -84,16 +106,20 @@
 
 .video-player {
   width: 100%;
-  max-width: 760px;
+  max-width: 59.375vw;
   min-width: 0;
-  box-sizing: border-box;
 
+  box-sizing: border-box;
   overflow: hidden;
+
   background: transparent;
+
   border: 2px solid rgba(255, 255, 255, 0.435);
   border-radius: 15px;
+
   z-index: 2;
 }
+
 
 .video-swiper,
 .video-swiper .swiper-wrapper,
@@ -135,16 +161,27 @@
   .video-content {
     grid-template-columns: 1fr;
     gap: 32px;
+
+    padding-top: 40px;
   }
 
   .video-menu {
     flex-direction: row;
     flex-wrap: wrap;
+
+    gap: 12px;
   }
 
   .video-menu button {
     flex: 1;
     min-width: 120px;
+
+    padding: 14px 18px;
+    font-size: 16px;
+  }
+
+  .video-player {
+    max-width: 100%;
   }
 }
 
@@ -152,4 +189,3 @@
 .video-menu button {
   font-family: "Valorant", sans-serif;
 }
-
