@@ -115,27 +115,18 @@
    ========================= */
 
 .buy-prices {
-  width: 100%;
-
+  width: 90%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-  /* Original: 48px */
-  gap: 3.75vw;
-
+  gap: 2vw;
   box-sizing: border-box;
 }
 
 .buy-option {
-  /* Original: 32px */
-  padding: 2.5vw;
-
+  padding: 1.5vw;
   background-color: #0c141c;
-
   border: 1px solid rgba(236, 232, 225, 0.45);
-
-  border-radius: 8px;
-
+  border-radius: 6px;
   box-sizing: border-box;
 }
 
@@ -177,54 +168,58 @@
   font-size: 2.1875vw;
 }
 
-
-/* =========================
-   MOBILE
-   ========================= */
+ /* =========================
+    MOBILE
+    ========================= */
 
 @media (max-width: 700px) {
+
   .buy-section {
-    padding: 60px 6%;
+    padding: 40px 8%;
   }
 
+  /* Title */
   .buy-title {
-    font-size: clamp(40px, 8vw, 58px);
+    padding-top: 100px;
+    font-size: clamp(32px, 6vw, 46px);
   }
 
+  /* Carousel */
   .buy-carousel .swiper {
-    padding: 40px 0;
+    padding: 25px 0;
   }
 
   .buy-carousel .swiper-slide {
-    width: 170px;
-    height: 120px;
+    width: 125px;
+    height: 88px;
   }
 
   .buy-carousel .swiper-slide-active {
-    transform: scale(1.15);
+    transform: scale(1.08);
   }
 
+  /* Prices */
   .buy-prices {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 14px;
   }
 
   .buy-option {
-    padding: 24px;
+    padding: 16px;
   }
 
   .buy-price {
-    font-size: clamp(28px, 8vw, 56px);
-    gap: 12px;
+    font-size: clamp(22px, 6vw, 40px);
+    gap: 8px;
   }
 
   .buy-price img {
-    width: 50px;
-    height: 50px;
+    width: 34px;
+    height: 34px;
   }
 
   .buy-label {
-    margin-top: 12px;
-    font-size: clamp(18px, 5vw, 28px);
+    margin-top: 8px;
+    font-size: clamp(14px, 4vw, 22px);
   }
 }

@@ -175,3 +175,30 @@
   }
 }
 /* sparkles */
+
+
+/* mobile */
+@media (max-width: 700px) {
+  .home {
+    height: 100vh;
+    min-height: 0;
+    border-radius: 0 0 40px 40px;
+  }
+
+  .home-title {
+    top: -70px;
+    font-size: 25vw;
+  }
+
+  .home-cutout {
+    width: 180vw;
+    height: calc(180vw * 2.3895);
+
+    top: -2vh;
+    margin-left: -90vw;
+  }
+
+  .home-card {
+    height: -5vh;
+  }
+}

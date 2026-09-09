@@ -154,6 +154,7 @@
 }
 
 @media (max-width: 700px) {
+
   .video-section {
     padding: 60px 6%;
   }
@@ -161,23 +162,35 @@
   .video-content {
     grid-template-columns: 1fr;
     gap: 32px;
-
     padding-top: 40px;
   }
 
   .video-menu {
     flex-direction: row;
     flex-wrap: wrap;
-
     gap: 12px;
   }
 
   .video-menu button {
     flex: 1;
     min-width: 120px;
-
     padding: 14px 18px;
     font-size: 16px;
+  }
+
+  /* Mobile button order:
+     Showcase 1 → Showcase 2 → Trailer
+  */
+  .video-menu button:nth-child(1) {
+    order: 3;
+  }
+
+  .video-menu button:nth-child(2) {
+    order: 1;
+  }
+
+  .video-menu button:nth-child(3) {
+    order: 2;
   }
 
   .video-player {

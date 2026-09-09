@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative } from "swiper/modules";
@@ -35,6 +35,22 @@ const getWeaponSizeClass = (name: string) => {
 
 
 function Collection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 700);
+    };
+
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
   const [selectedWeapon, setSelectedWeapon] = useState(0);
   const [selectedVariant, setSelectedVariant] = useState("blue");
   const [cardFlipKey, setCardFlipKey] = useState(0);
@@ -143,7 +159,8 @@ function Collection() {
           effect="creative"
           initialSlide={selectedWeapon}
           speed={650}
-          allowTouchMove={false}
+          allowTouchMove={isMobile}
+          grabCursor={isMobile}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
