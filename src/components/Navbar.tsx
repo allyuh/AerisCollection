@@ -1,4 +1,4 @@
-import "../assets/styles/navbar.css";
+import "../assets/styles/Navbar.css";
 
 import {
   House,
