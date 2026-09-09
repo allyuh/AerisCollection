@@ -178,9 +178,6 @@
     font-size: 16px;
   }
 
-  /* Mobile button order:
-     Showcase 1 → Showcase 2 → Trailer
-  */
   .video-menu button:nth-child(1) {
     order: 3;
   }
