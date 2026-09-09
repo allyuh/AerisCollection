@@ -1,10 +1,15 @@
 import { useRef } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import { Autoplay, EffectCoverflow } from "swiper/modules";
+
 import { motion, useScroll, useTransform } from "motion/react";
 
 import "swiper/css";
+
 import "swiper/css/effect-coverflow";
+
 import "../assets/styles/buy.css";
 
 const collectionImages = [
@@ -28,6 +33,20 @@ function BuyNow() {
     offset: ["start end", "center center"],
   });
 
+  // buy now text
+  const titleY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [-350, 0]
+  );
+
+  const titleOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    [0, 0.5, 1]
+  );
+
+ // prices
   const leftPriceX = useTransform(
     scrollYProgress,
     [0, 1],
@@ -47,8 +66,20 @@ function BuyNow() {
   );
 
   return (
-    <section id="buy" className="buy-section" ref={buySectionRef}>
-      <h2 className="buy-title">Buy Now!</h2>
+    <section
+      id="buy"
+      className="buy-section"
+      ref={buySectionRef}
+    >
+      <motion.h2
+        className="buy-title"
+        style={{
+          y: titleY,
+          opacity: titleOpacity,
+        }}
+      >
+        Buy Now!
+      </motion.h2>
 
       <div className="buy-carousel">
         <Swiper
@@ -96,10 +127,16 @@ function BuyNow() {
           }}
         >
           <div className="buy-price">
-            <img src="/images/bg/vp.png" alt="Valorant Points" />
+            <img
+              src="/images/bg/vp.png"
+              alt="Valorant Points"
+            />
             <span>2,375</span>
           </div>
-          <span className="buy-label">Per weapon</span>
+
+          <span className="buy-label">
+            Per weapon
+          </span>
         </motion.div>
 
         <motion.div
@@ -110,10 +147,16 @@ function BuyNow() {
           }}
         >
           <div className="buy-price">
-            <img src="/images/bg/vp.png" alt="Valorant Points" />
+            <img
+              src="/images/bg/vp.png"
+              alt="Valorant Points"
+            />
             <span>9,500</span>
           </div>
-          <span className="buy-label">Bundle</span>
+
+          <span className="buy-label">
+            Bundle
+          </span>
         </motion.div>
       </div>
     </section>

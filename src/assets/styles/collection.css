@@ -15,6 +15,7 @@
   overflow: hidden;
 }
 
+/* background (applies to all except home) */
 .collection::before,
 .buy-section::before,
 .video-section ::before {
@@ -77,7 +78,7 @@
     black 48%
   );
 }
-
+/* background (applies to all except home) */
 
 
 .collection-left {
@@ -106,11 +107,25 @@
 .aeris-word {
   font-size: clamp(40px, 5vw, 80px);
   line-height: 1;
+ /* makes text not selectable */
+  pointer-events: none;
+  user-select: none;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ /* makes text not selectable */
 }
 
 .weapon-name {
   font-size: clamp(40px, 3vw, 80px);
   line-height: 1;
+ /* makes text not selectable */
+  pointer-events: none;
+  user-select: none;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ /* makes text not selectable */
 }
 
 .weapon-name-small {
@@ -130,12 +145,26 @@
   width: 28px;
   height: 28px;
   object-fit: contain;
+ /* makes text not selectable */
+  pointer-events: none;
+  user-select: none;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ /* makes text not selectable */
 }
 
 .vp-price span {
   color: #0f1923;
-
   font-size: 22px;
+ /* makes text not selectable */
+  pointer-events: none;
+  user-select: none;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ /* makes text not selectable */
+  
 }
 
 .weapon-buttons {
@@ -155,8 +184,14 @@
   border: 1px solid #0f1923;
   border-radius: 5px;
   background: transparent;
-
   cursor: pointer;
+
+ /* makes text not selectable */
+  user-select: none;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ /* makes text not selectable */
 
   overflow: hidden;
 
@@ -307,7 +342,7 @@
 
   transform: translateY(-50%);
 
-  border: 1.5625vw solid #ece8e1;
+  border: 1.4625vw solid #ece8e1;
   border-radius: 50%;
 
   background: transparent;
@@ -324,6 +359,12 @@
   object-fit: contain;
   pointer-events: none;
   transform: rotate(16deg);
+ /* makes text not selectable */
+  user-select: none;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ /* makes text not selectable */
 }
 
 .selected-gun.gun-small {

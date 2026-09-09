@@ -14,10 +14,10 @@ function Footer() {
     </div>
 
       <nav className="footer-links" aria-label="Footer navigation">
-        <a href="#home">HOME</a>
+        <a href="#home">Home</a>
         <a href="#collection">Collection</a>
-        <a href="#videos">videos</a>
-        <a href="#buy">BUY NOW</a>
+        <a href="#videos">Videos</a>
+        <a href="#buy">Buy Now</a>
       </nav>
 
       <div className="footer-socials" aria-label="Social media links">
@@ -36,7 +36,8 @@ function Footer() {
       </div>
 
       <p className="footer-copy">
-        © 2020-2026 Riot Games, Inc. RIOT GAMES, VALORANT and any associated logos are trademarks, service marks, and/or registered trademarks of Riot Games, Inc.
+        © 2026 Aeris Collection.
+        Aeris Collection was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project. 
       </p>
     </footer>
   );

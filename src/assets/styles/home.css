@@ -54,7 +54,14 @@
 
   font-weight: normal;
   letter-spacing: 0.05em;
+  
+ /* makes text not selectable */
   pointer-events: none;
+  user-select: none;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ /* makes text not selectable */
 
   background: linear-gradient(
     110deg,
