@@ -15,7 +15,7 @@ This features the **Aeris Collection** from Valorant.
 * Desktop layout: Done
 * Mobile layout: 5% finished
 
-## Installation
+## Installation (in terminal)
 
 ### 1. Clone the repository
 
