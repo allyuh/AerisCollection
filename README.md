@@ -2,6 +2,8 @@
 
 This features the **Aeris Collection** from Valorant.
 
+> **Note:** This website is still a work in progress and is **not fully finished**. Some features and the mobile layout are still being developed/polished.
+
 ### Collection includes
 
 * Melee
@@ -64,3 +66,5 @@ To preview the production build locally:
 ```bash
 npm run preview
 ```
+
+
