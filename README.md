@@ -13,13 +13,14 @@ This features the **Aeris Collection** from Valorant.
 ### Progress
 
 * Desktop layout: Done
-* Mobile layout: 20% finished
+* Mobile layout: 5% finished
 
 ## Installation
 
 ### 1. Clone the repository
 
-git clone <your-repository-url>
+```bash
+git clone <https://github.com/allyuh/AerisCollection>
 ```
 
 ### 2. Open the project folder
@@ -42,7 +43,11 @@ npm run dev
 
 ### 5. Open the website
 
-After running `npm run dev`
+After running `npm run dev`, Vite will provide a local URL, usually:
+
+```text
+http://localhost:5173/
+```
 
 Open the URL in your browser to view the website.
 
