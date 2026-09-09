@@ -35,11 +35,6 @@
   font-weight: 500;
   border-radius: 999px;
 
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-
   transition:
     background 0.25s ease,
     color 0.25s ease;
@@ -47,4 +42,48 @@
 
 .navbar a:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* mobile */
+
+.navbar-icon {
+  display: none !important;
+}
+
+.navbar-text {
+  display: inline;
+}
+
+
+/* =========================
+   MOBILE NAVBAR
+   ========================= */
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    top: 16px;
+    padding: 6px;
+    gap: 4px;
+  }
+
+  .navbar a {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-text {
+    display: none !important;
+  }
+
+  .navbar-icon {
+    display: block !important;
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+  }
 }
