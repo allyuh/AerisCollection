@@ -32,17 +32,13 @@
   color: #ece8e1;
   font-family: "Valorant", sans-serif;
 
-  /* Original max: 58px */
+  /* 58px */
   font-size: 4.53125vw;
 
   font-weight: normal;
   text-align: center;
 }
 
-
-/* =========================
-   CAROUSEL
-   ========================= */
 
 .buy-carousel {
   width: 100%;
@@ -52,14 +48,14 @@
 .buy-carousel .swiper {
   width: 100%;
 
-  /* Original: 70px */
+  /* 70px */
   padding: 5.46875vw 0;
 
   overflow: visible;
 }
 
 .buy-carousel .swiper-slide {
-  /* Original: 240px × 170px */
+  /* 240px × 170px */
   width: 18.75vw;
   height: 13.28125vw;
 
@@ -131,19 +127,19 @@
   align-items: center;
   justify-content: center;
 
-  /* Original: 12px */
+  /* 12px */
   gap: 0.9375vw;
 
   color: #ece8e1;
 
-  /* Original max: 56px */
+  /* 56px */
   font-size: 4.375vw;
 
   text-align: center;
 }
 
 .buy-price img {
-  /* Original: 50px */
+  /*  50px */
   width: 3.90625vw;
   height: 3.90625vw;
 
@@ -153,14 +149,12 @@
 .buy-label {
   display: block;
 
-  /* Original: 12px */
+  /* 12px */
   margin-top: 0.9375vw;
-
   text-align: center;
-
   color: #ff4655;
 
-  /* Original max: 28px */
+  /* 28px */
   font-size: 2.1875vw;
 }
 
@@ -171,13 +165,11 @@
     padding: 40px 8%;
   }
 
-  /* Title */
   .buy-title {
     padding-top: 120px;
     font-size: clamp(32px, 6vw, 46px);
   }
 
-  /* Carousel */
   .buy-carousel .swiper {
     padding: 25px 0;
   }
@@ -191,7 +183,6 @@
     transform: scale(1.08);
   }
 
-  /* Prices */
   .buy-prices {
     grid-template-columns: 1fr;
     gap: 14px;

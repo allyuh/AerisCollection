@@ -37,12 +37,10 @@ function App() {
       <main>
         <div className="transition-stage">
 
-          {/* HOME */}
           <div className="home-wrapper">
             <Home />
           </div>
 
-          {/* COLLECTION */}
           <div
             id="collection"
             className={`collection-wrapper ${

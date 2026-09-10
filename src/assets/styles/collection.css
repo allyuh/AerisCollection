@@ -107,6 +107,7 @@
 .aeris-word {
   font-size: clamp(40px, 5vw, 80px);
   line-height: 1;
+
  /* makes text not selectable */
   pointer-events: none;
   user-select: none;
@@ -119,6 +120,7 @@
 .weapon-name {
   font-size: clamp(40px, 3vw, 80px);
   line-height: 1;
+
  /* makes text not selectable */
   pointer-events: none;
   user-select: none;
@@ -145,6 +147,7 @@
   width: 28px;
   height: 28px;
   object-fit: contain;
+
  /* makes text not selectable */
   pointer-events: none;
   user-select: none;
@@ -157,6 +160,7 @@
 .vp-price span {
   color: #0f1923;
   font-size: 22px;
+
  /* makes text not selectable */
   pointer-events: none;
   user-select: none;
@@ -359,6 +363,7 @@
   object-fit: contain;
   pointer-events: none;
   transform: rotate(16deg);
+
  /* makes text not selectable */
   user-select: none;
  -webkit-user-select: none;
@@ -493,7 +498,6 @@
 
   transform-style: preserve-3d;
 }
-
 /* card */
 
 /* mobile */

@@ -33,10 +33,10 @@
   display: grid;
 
   /*
-    Original:
-    180px menu
-    760px player
+    180px -menu
+    760px -player
   */
+
   grid-template-columns:
     minmax(10.9375vw, 14.0625vw)
     minmax(0, 59.375vw);
