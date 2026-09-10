@@ -186,7 +186,7 @@
   }
 
   .home-title {
-    top: -90px;
+    top: -35vh;
     font-size: 25vw;
   }
 
@@ -194,7 +194,7 @@
     width: 180vw;
     height: calc(180vw * 2.3895);
 
-    top: 15vh;
+    top: -3vh;
     margin-left: -90vw;
   }
 
