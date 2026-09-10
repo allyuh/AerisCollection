@@ -173,7 +173,7 @@
 
   /* Title */
   .buy-title {
-    padding-top: 100px;
+    padding-top: 120px;
     font-size: clamp(32px, 6vw, 46px);
   }
 
