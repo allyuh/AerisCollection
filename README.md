@@ -15,7 +15,7 @@ This features the **Aeris Collection** from Valorant.
 ### Progress
 
 * Desktop layout: Done
-* Mobile layout: 20% finished
+* Mobile layout: 30% finished
 
 ### Color Variants
 

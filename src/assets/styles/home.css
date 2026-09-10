@@ -194,11 +194,12 @@
     width: 180vw;
     height: calc(180vw * 2.3895);
 
-    top: -2vh;
+    top: 15vh;
     margin-left: -90vw;
   }
 
   .home-card {
-    height: -5vh;
+    height: -13vh;
+    top: 8vh;
   }
 }
