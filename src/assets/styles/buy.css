@@ -215,4 +215,7 @@
     margin-top: 8px;
     font-size: clamp(14px, 4vw, 22px);
   }
+  #buy {
+    scroll-margin-top: 0px;
+  }
 }

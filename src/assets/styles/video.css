@@ -162,7 +162,6 @@
   .video-content {
     grid-template-columns: 1fr;
     gap: 32px;
-    padding-top: 40px;
   }
 
   .video-menu {
@@ -192,6 +191,9 @@
 
   .video-player {
     max-width: 100%;
+  }
+  #video {
+  scroll-margin-top: 0px;
   }
 }
 
