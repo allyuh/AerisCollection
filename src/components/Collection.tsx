@@ -153,49 +153,52 @@ function Collection() {
           </motion.div>
         </div>
 
-        <Swiper
-          className="weapon-carousel"
-          modules={[EffectCreative]}
-          effect="creative"
-          initialSlide={selectedWeapon}
-          speed={650}
-          allowTouchMove={isMobile}
-          simulateTouch={isMobile}
-          touchRatio={1}
-          touchAngle={45}
-          grabCursor={isMobile}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          onSlideChange={(swiper) => {
-            setSelectedWeapon(swiper.realIndex);
-          }}
-          creativeEffect={{
-            limitProgress: 3,
-            prev: {
-              translate: ["60%", "-55%", 0],
-              rotate: [0, 0, 35],
-              scale: 0.8,
-              opacity: 0,
-            },
-            next: {
-              translate: ["-60%", "55%", 0],
-              rotate: [0, 0, -35],
-              scale: 0.8,
-              opacity: 0,
-            },
-          }}
-        >
-          {weapons.map((weapon) => (
-            <SwiperSlide key={weapon.name}>
-              <img
-                className={`selected-gun ${getWeaponSizeClass(weapon.name)}`}
-                src={weapon.image}
-                alt={weapon.name}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <Swiper
+      className="weapon-carousel"
+      modules={[EffectCreative]}
+      effect="creative"
+      initialSlide={selectedWeapon}
+      speed={650}
+      allowTouchMove={isMobile}
+      simulateTouch={isMobile}
+      touchStartPreventDefault={false}
+      touchRatio={1}
+      touchAngle={45}
+      threshold={5}
+      grabCursor={isMobile}
+      onSwiper={(swiper) => {
+        swiperRef.current = swiper;
+      }}
+      onSlideChange={(swiper) => {
+        setSelectedWeapon(swiper.realIndex);
+        setCardFlipKey((currentKey) => currentKey + 1);
+      }}
+      creativeEffect={{
+        limitProgress: 3,
+        prev: {
+          translate: ["60%", "-55%", 0],
+          rotate: [0, 0, 35],
+          scale: 0.8,
+          opacity: 0,
+        },
+        next: {
+          translate: ["-60%", "55%", 0],
+          rotate: [0, 0, -35],
+          scale: 0.8,
+          opacity: 0,
+        },
+      }}
+    >
+      {weapons.map((weapon) => (
+        <SwiperSlide key={weapon.name}>
+          <img
+            className={`selected-gun ${getWeaponSizeClass(weapon.name)}`}
+            src={weapon.image}
+            alt={weapon.name}
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
       </div>
     </div>
   );

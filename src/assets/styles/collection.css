@@ -542,6 +542,7 @@
     justify-content: center;
 
     overflow: visible;
+    touch-action: pan-x;
   }
 
 
@@ -579,13 +580,15 @@
     z-index: 2;
 
     cursor: grab;
+
     touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   .weapon-carousel:active {
     cursor: grabbing;
   }
-
 
   /* weapon image */
 
