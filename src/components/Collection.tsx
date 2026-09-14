@@ -160,6 +160,9 @@ function Collection() {
           initialSlide={selectedWeapon}
           speed={650}
           allowTouchMove={isMobile}
+          simulateTouch={isMobile}
+          touchRatio={1}
+          touchAngle={45}
           grabCursor={isMobile}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
@@ -169,14 +172,12 @@ function Collection() {
           }}
           creativeEffect={{
             limitProgress: 3,
-
             prev: {
               translate: ["60%", "-55%", 0],
               rotate: [0, 0, 35],
               scale: 0.8,
               opacity: 0,
             },
-
             next: {
               translate: ["-60%", "55%", 0],
               rotate: [0, 0, -35],
