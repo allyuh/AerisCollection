@@ -157,6 +157,8 @@
 
   .video-section {
     padding: 60px 6%;
+    
+    height: auto;
   }
 
   .video-content {

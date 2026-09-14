@@ -506,11 +506,14 @@
 
   .collection {
     min-height: auto;
+    height: auto;
+    scroll-margin-top: -100px;
   }
 
   .collection-content {
     width: 100%;
-    min-height: 200vw;
+    min-height: 100vw;
+    height: auto;
 
     display: flex;
     flex-direction: column;
@@ -519,7 +522,7 @@
 
     gap: 0;
 
-    padding: 40px 3vw 60px;
+    padding: 110px 4vw 60px;
 
     overflow: hidden;
     box-sizing: border-box;
