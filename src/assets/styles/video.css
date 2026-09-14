@@ -157,7 +157,6 @@
 
   .video-section {
     padding: 60px 6%;
-    
     height: auto;
   }
 
@@ -195,7 +194,7 @@
   .video-player {
     max-width: 100%;
   }
-  #video {
+  #videos {
   scroll-margin-top: -100px;
   }
 }
