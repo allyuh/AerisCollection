@@ -232,6 +232,20 @@
   background: rgba(50, 71, 106, 0.334);
 }
 
+.color-variants {
+  width: 100%;
+  margin-top: 1.6vw;
+}
+
+.color-variants > span {
+  display: block;
+  margin-bottom: -0.78vw;
+  font-family: "Valorant", sans-serif;
+  font-size: 1.3vw;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .square-buttons {
   display: flex;
   gap: 12px;
@@ -691,7 +705,16 @@
     border-radius: 4px;
   }
 
+  .color-variants {
+   margin-top: 4vw;
+  }
 
+  .color-variants > span {
+    margin-bottom: 1.5vw;
+    font-size: 3.5vw;
+    justify-content: center;
+  }
+  
   .square-buttons {
     gap: 2vw;
 

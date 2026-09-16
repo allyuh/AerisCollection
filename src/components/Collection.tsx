@@ -109,6 +109,10 @@ function Collection() {
             </button>
           ))}
         </div>
+        
+
+      <div className="color-variants">
+        <span>Color Variants:</span>
 
         <div className="square-buttons">
           {["blue", "red", "pink", "purp"].map((variant) => (
@@ -126,6 +130,7 @@ function Collection() {
             />
           ))}
         </div>
+      </div>
       </div>
 
       <div className="collection-right">
