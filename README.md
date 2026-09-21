@@ -23,7 +23,7 @@ The color variants are **not yet available**.
 
 Adding the other color variants will take some time because I have not yet been able to find HD images of the guns in their other color variants. The variant buttons are currently present in the interface but are not functional yet.
 
-## Installation (in terminal)
+## Installation 
 
 ### 1. Clone the repository
 
