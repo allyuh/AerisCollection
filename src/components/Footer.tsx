@@ -21,7 +21,7 @@ function Footer() {
       </nav>
 
       <div className="footer-socials" aria-label="Social media links">
-        <a href="#" aria-label="YouTube">
+        <a href="https://www.youtube.com/@valorant" aria-label="YouTube">
           <FaYoutube />
         </a>
         <a href="https://x.com/VALORANT" aria-label="X">
