@@ -63,7 +63,7 @@
     min-height: 190vh;
   }
 
-  /* .collection-wrapper {
+  .collection-wrapper {
     height: 100vh;
   }
 
@@ -74,5 +74,5 @@
   .collection-is-normal {
     top: 100vh;
     height: 100vh;
-  } */
+  }
 }
