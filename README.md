@@ -2,10 +2,6 @@
 
 This features the **Aeris Collection** from Valorant.
 
-<p align="center">
-  <img src="https://wiki.playvalorant.com/en-us/images/Bundle_Aeris.png" alt="Aeris Collection" width="900">
-</p>
-
 > **Note:** This website is still a work in progress and is not fully finished. Some features and the mobile layout are still being developed/polished.
 
 ### Collection includes
